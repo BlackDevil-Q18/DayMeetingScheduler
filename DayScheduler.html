@@ -1,0 +1,50 @@
+<html>
+<head>
+<script src="MeetingScheduler.js"></script>
+<script src="DaySchedulerView.js"></script>
+<link rel="stylesheet" type="text/css" href="DayScheduler.css">
+<script>
+var mlist = [{
+				id:1,
+				name:"Meeting 1",
+				start:60,
+				end:150
+				},
+				{
+				id:2,
+				name:"Meeting 2",
+				start:540,
+				end:570
+				},
+				{
+				id:3,
+				name:"Meeting 3",
+				start:555,
+				end:600
+				},
+				{
+				id:4,
+				name:"Meeting 4",
+				start:595,
+				end:660
+				}];
+		
+
+var DAY_WIDTH = 600,
+	MINUTE_PIX = 2;
+
+
+function loadMeeting(){
+	var daySchedulerCont = document.getElementById("dayschedule");
+	var daySchedule = new DaySchedulerView(daySchedulerCont,mlist);
+		daySchedule.render();
+}
+</script>
+</head>
+<body onload="loadMeeting()">
+	<div class="scheduler-container">
+		<div class="scheduler-title">Day Scheduler</script></div>
+		<div id="dayschedule" class="schedule-day"></div>
+	</div>
+</body>
+</html>
